@@ -1,10 +1,11 @@
 const mongoose = require("mongoose")
 const express = require("express")
 const app = express();
+require('dotenv').config();
 const route = express.Router();
 const foodModel = require("./channel");
 const PORT = 3000;
-const dbUrl="mongodb+srv://suhail:flgiDiuAh8fyCdgo@cluster0.56uo9.mongodb.net/testdb?retryWrites=true&w=majority"
+const dbUrl=process.env.MONGO_URI
 const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // Body parser use JSON data
